@@ -1,0 +1,28 @@
+.navbar-brand {
+    font-family: 'Concert One', cursive !important;
+    /* font-weight: bold; */
+    font-size: 25px;
+}
+
+body {
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+#map {
+    border: 1px solid black;
+    height: 400px;
+}
+
+.trail-viewer, .weather-viewer {
+    font-weight: bold;
+    text-align: center;
+    font-size: 16px;
+}
+
+th {
+    align-content: center;
+}
+
+#table-data {
+    align-content: center;
+}

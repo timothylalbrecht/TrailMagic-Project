@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Concert+One|Roboto+Condensed" rel="stylesheet">
+    <title>TrailMagic</title>
+</head>
+<body>
+    <nav class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+          <!-- Brand and toggle get grouped for better mobile display -->
+          <div class="navbar-header">
+            <a class="navbar-brand">TrailMagic</a>
+          </div>
+  
+          <!-- Collect the nav links, forms, and other content for toggling -->
+          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            
+            <form class="navbar-form navbar-right" role="search">
+              <div class="form-group">
+                <input type="text" class="form-control" id="add-zip" placeholder="Enter Zip Code">
+              </div>
+              <button type="submit" class="btn btn-default" id="submit">Submit</button>
+              <button type="clear" class="btn btn-default" id="clear">Clear</button>
+            </form>
+            <ul class="nav navbar-nav navbar-right">
+              <li><a>What's TrailMagic?</a></li>
+            </ul>
+          </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+      </nav>
+
+    <script src="assets/javascript/trail.js"></script>
+
+    <div class="container">
+        <div class="map-div" id="map">
+            
+        </div>
+
+        <hr>
+
+        <div class="panel panel-default">
+            <div class="panel-heading weather-viewer"> Weather Data </div>
+
+            <table class="table table-hover">
+                <tr>
+                    <th scope="col">Closest City</th>
+                    <th scope="col">Temperature (F)</th>
+                    <th scope="col">Conditions</th>
+                    <th scope="col">Humidity</th>
+                </tr>
+                <tbody id="weather-data"></tbody>
+            </table>
+        </div>
+
+        <div class="panel panel-default">
+            <div class="panel-heading trail-viewer"> Trail Data </div>
+
+            <table class="table table-hover">
+                <tr>
+                    <th scope="col">Trail Name</th>
+                    <th scope="col">Length (miles)</th>
+                    <th scope="col">Difficulty</th>
+                    <th scope="col">Rating</th>
+                    <th scope="col">Total Reviews</th>
+                </tr>
+                <tbody id="table-data"></tbody>
+            </table>
+        </div>
+    </div>
+
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAyh_AifnsTFzQTcbGEcOWZSNLDlcrG5jg&callback=initMap"></script>
+</body>
+</html>
