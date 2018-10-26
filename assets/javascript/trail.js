@@ -14,6 +14,7 @@ var map;
 
 // Simple clear button to reset global variables and clear out weather and hiking data from tables
 $("#clear").on("click", function () {      
+    event.preventDefault();
     lat = 0;
     long = 0;
     userZip = 0;
@@ -38,6 +39,7 @@ $("#clear").on("click", function () {
 $("#submit").on("click", function () {
     var userZip = $("#add-zip").val().trim();
     console.log("Zipcode: " + userZip);
+    event.preventDefault();
     var weatherAPIKey = "1ea7d1356516bbfed9e0beb0310c514f";
     var weatherQueryURL = "http://api.openweathermap.org/data/2.5/forecast?units=imperial&cnt=1&zip=" + userZip + ",us&APPID=" + weatherAPIKey;
 
