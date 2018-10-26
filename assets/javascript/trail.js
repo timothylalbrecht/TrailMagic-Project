@@ -11,9 +11,34 @@ var trailArray = [];
 var mapArray = [];
 var map;
 
+$("#whatMagic").on("click", function() {
+	$('.bg-modal').attr( "style", "display: flex" );
+});
+// document.getElementById('whatMagic').addEventListener("click", function() {
+// 	document.querySelector('.bg-modal').style.display = "flex";
+// });
 
+$("#close").on("click", function() {
+	$('.bg-modal').attr( "style", "display: none" );
+});
+// document.querySelector('.close').addEventListener("click", function() {
+// 	document.querySelector('.bg-modal').style.display = "none";
+// });
+
+//populate USA coordinates in map on page load
+function onload(){
+    function initMap() {
+
+        var map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 4,
+            center: { lat: 39.8283, lng: -98.5795 }
+        });
+    }
+    initMap();
+}
 // Simple clear button to reset global variables and clear out weather and hiking data from tables
-$("#clear").on("click", function () {      
+$("#clear").on("click", function () {   
+    event.preventDefault();   
     lat = 0;
     long = 0;
     userZip = 0;
@@ -38,6 +63,7 @@ $("#clear").on("click", function () {
 $("#submit").on("click", function () {
     var userZip = $("#add-zip").val().trim();
     console.log("Zipcode: " + userZip);
+    event.preventDefault();
     var weatherAPIKey = "1ea7d1356516bbfed9e0beb0310c514f";
     var weatherQueryURL = "http://api.openweathermap.org/data/2.5/forecast?units=imperial&cnt=1&zip=" + userZip + ",us&APPID=" + weatherAPIKey;
 
